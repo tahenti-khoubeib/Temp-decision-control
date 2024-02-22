@@ -1,0 +1,32 @@
+{
+    "editor.formatOnSave": true,
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "testMate.cpp.test.executables": "build/*_tests*",
+    "testMate.cpp.test.advancedExecutables": [
+        {
+            "pattern": "build-*/**/*_test*",
+            "cwd": "${absDirpath}"
+        }
+    ],
+    "cmake.ctest.parallelJobs": 1,
+    "cmake.generator": "Ninja",
+    "C_Cpp.autoAddFileAssociations": false,
+    "C_Cpp.intelliSenseCacheSize": 2048,
+    "gcovViewer.buildDirectories": [
+        "${workspaceFolder}/build"
+    ],
+    "gcovViewer.gcovBinary": "gcov",
+    "gcovViewer.highlightMissedLines": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.tabSize": 2,
+    "testMate.cpp.test.executables": "${workspaceFolder}/build/*_test*",
+    // "cmake.sourceDirectory": "/home/tahenti/MyProject-Demo/Daikin/dk_decision_control/tests",
+    "statusbar-tasks.tasks": [
+        {
+            "label": "Clean",
+            "command": "workbench.action.tasks.runTask",
+            "args": "Clean"
+        }
+    ]
+}

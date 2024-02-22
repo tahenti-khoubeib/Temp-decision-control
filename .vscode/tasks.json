@@ -1,0 +1,85 @@
+{
+	"version": "2.0.0",
+	"options": {
+		"env": {
+			"PROJECT_PATH": "${workspaceFolder}/Daikin/dk_decision_control",
+			"BUILD_PATH": "${workspaceRoot}/build",
+		},
+	},
+	"tasks": [
+		{
+			"label": "Test",
+			"type": "shell",
+			"command": "cmake",
+			"args": [
+				"-S",
+				"${PROJECT_PATH}/tests",
+				"-B",
+				"${BUILD_PATH}"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"presentation": {
+				"reveal": "always"
+			},
+			"linux": {
+				"command": "make",
+				"args": [
+					"-C",
+					"${BUILD_PATH}"
+				]
+			}
+		},
+		{
+			"label": "Clean",
+			"type": "shell",
+			"command": "rm",
+			"args": [
+				"-rf",
+				"${BUILD_PATH}"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated"
+			}
+		},
+		{
+			"label": "Build",
+			"type": "shell",
+			"command": "cmake",
+			"args": [
+				"-S",
+				"${PROJECT_PATH}",
+				"-B",
+				"${BUILD_PATH}"
+			],
+			// "dependsOn": [
+			// 	"Clean"
+			// ],
+			"problemMatcher": [],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"presentation": {
+				"reveal": "always"
+			},
+			"linux": {
+				"command": "make",
+				"args": [
+					"-C",
+					"${BUILD_PATH}/"
+				]
+			}
+		}
+	]
+}
