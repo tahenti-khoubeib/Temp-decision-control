@@ -88,7 +88,7 @@ void ActiveCoolingTempControlState::Update(std::shared_ptr<TempControl> temp_con
     temp_control->SetState(InactiveTempControlState::GetInstance());
   }
 
-  if (intake_temp > threshold_max_temp)
+  if (intake_temp < threshold_min_temp)
   {
     temp_control->SetState(ActiveHeatingTempControlState::GetInstance());
   }
@@ -109,7 +109,7 @@ void ActiveHeatingTempControlState::Update(std::shared_ptr<TempControl> temp_con
     temp_control->SetState(InactiveTempControlState::GetInstance());
   }
 
-  if (intake_temp < threshold_max_temp)
+  if (intake_temp > threshold_max_temp)
   {
     temp_control->SetState(ActiveCoolingTempControlState::GetInstance());
   }
@@ -125,6 +125,9 @@ void TempControl::RefreshHandler()
   std::scoped_lock lck(async_mutex_);
   Common::control::ControlType previousType = Common::control::ControlType::Fan;
   printf("Thread Started\n");
+  auto start_time = std::chrono::steady_clock::now();
+  using LoopDurationType = std::chrono::seconds;
+  LoopDurationType loop_duration{15};
 
   while (true)
   {
@@ -134,7 +137,14 @@ void TempControl::RefreshHandler()
     if (currentType != previousType)
     {
       previousType = currentType;
-      printf("Demand Control for the Indoor Unit: %s\n", Common::control::controlTypeToString(currentType).c_str());
+      printf(" Thread Demand Control for the Indoor Unit: %s\n", Common::control::controlTypeToString(currentType).c_str());
+    }
+
+    auto elapsed_time = std::chrono::steady_clock::now() - start_time;
+    if (elapsed_time >= loop_duration)
+    {
+      // Exit the loop after 10 seconds
+      break;
     }
   }
 }

@@ -52,7 +52,7 @@ namespace dk::decision
 
     bool close_ = default_close_;
 
-    std::chrono::milliseconds refresh_interval_{500};
+    std::chrono::seconds refresh_interval_{1};
 
     mutable std::mutex async_mutex_;
   };

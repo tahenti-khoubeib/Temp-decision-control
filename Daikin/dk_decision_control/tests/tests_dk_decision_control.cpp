@@ -60,17 +60,17 @@ TEST_F(TempControlTest, GoingToActiveStateTransitions)
   TempControl_->SetState(InactiveTempControlState::GetInstance());
   ASSERT_TRUE(TempControl_->GetState() == InactiveTempControlState::GetInstance());
 
-  ActiveHeatingTempControlState::GetInstance()->Update(TempControl_, 19.0_C, MIN_THRESHOLD_TEMP, MAX_THRESHOLD_TEMP);
-  ASSERT_TRUE(TempControl_->GetState() == ActiveCoolingTempControlState::GetInstance());
-  ASSERT_FALSE(TempControl_->GetState() == ActiveHeatingTempControlState::GetInstance());
-  ASSERT_EQ(TempControl_->GetOutput(), ControlType::Cooling);
-
-  ActiveCoolingTempControlState::GetInstance()->Update(TempControl_, 35.0_C, MIN_THRESHOLD_TEMP, MAX_THRESHOLD_TEMP);
+  InactiveTempControlState::GetInstance()->Update(TempControl_, 19.0_C, MIN_THRESHOLD_TEMP, MAX_THRESHOLD_TEMP);
   ASSERT_FALSE(TempControl_->GetState() == ActiveCoolingTempControlState::GetInstance());
   ASSERT_TRUE(TempControl_->GetState() == ActiveHeatingTempControlState::GetInstance());
   ASSERT_EQ(TempControl_->GetOutput(), ControlType::Heating);
 
-  InactiveTempControlState::GetInstance()->Update(TempControl_, 25.0_C, MIN_THRESHOLD_TEMP, MAX_THRESHOLD_TEMP);
+  ActiveHeatingTempControlState::GetInstance()->Update(TempControl_, 35.0_C, MIN_THRESHOLD_TEMP, MAX_THRESHOLD_TEMP);
+  ASSERT_FALSE(TempControl_->GetState() == ActiveHeatingTempControlState::GetInstance());
+  ASSERT_TRUE(TempControl_->GetState() == ActiveCoolingTempControlState::GetInstance());
+  ASSERT_EQ(TempControl_->GetOutput(), ControlType::Cooling);
+
+  ActiveHeatingTempControlState::GetInstance()->Update(TempControl_, 25.0_C, MIN_THRESHOLD_TEMP, MAX_THRESHOLD_TEMP);
   ASSERT_FALSE(TempControl_->GetState() == ActiveCoolingTempControlState::GetInstance());
   ASSERT_FALSE(TempControl_->GetState() == ActiveHeatingTempControlState::GetInstance());
 

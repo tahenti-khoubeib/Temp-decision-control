@@ -13,18 +13,29 @@ int main(int argc, char* argv[])
   {
     auto temp_control = TempControl::Create();
 
-    temp_control->Update(10.0_C);
+    temp_control->Update(25.0_C);
 
-    printf("Demand Control for the Indoor Unit: %s\n", Common::control::controlTypeToString(temp_control->GetOutput()).c_str());
+    printf(" MAIN::Demand Control for the Indoor Unit With 25.0_C: %s\n",
+           Common::control::controlTypeToString(temp_control->GetOutput()).c_str());
 
-    std::this_thread::sleep_for(std::chrono::seconds(1));
+    std::this_thread::sleep_for(std::chrono::seconds(3));
 
     std::thread myThread(&TempControl::RefreshHandler, temp_control.get());
 
-    std::this_thread::sleep_for(std::chrono::seconds(1));
+    std::this_thread::sleep_for(std::chrono::seconds(3));
     temp_control->Update(35.0_C);
-    std::this_thread::sleep_for(std::chrono::seconds(1));
+    printf("MAIN:: Demand Control for the Indoor Unit With 35.0_C: %s\n",
+           Common::control::controlTypeToString(temp_control->GetOutput()).c_str());
+
+    std::this_thread::sleep_for(std::chrono::seconds(3));
+    temp_control->Update(15.0_C);
+    printf("MAIN:: Demand Control for the Indoor Unit With 15.0_C: %s\n",
+           Common::control::controlTypeToString(temp_control->GetOutput()).c_str());
+
+    std::this_thread::sleep_for(std::chrono::seconds(3));
     temp_control->Update(25.0_C);
+    printf("MAIN:: Demand Control for the Indoor Unit With 25.0_C: %s\n",
+           Common::control::controlTypeToString(temp_control->GetOutput()).c_str());
 
     myThread.join();
 
