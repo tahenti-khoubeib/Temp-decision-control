@@ -23,7 +23,7 @@ class TempControlTest : public Test
 
   void SetUp()
   {
-    TempControl_ = TempControl::Create();
+    TempControl_ = TempControl::Create(MIN_THRESHOLD_TEMP, MAX_THRESHOLD_TEMP);
     // TempControl_->temp_control_state_ = std::move(mockState);
   }
 

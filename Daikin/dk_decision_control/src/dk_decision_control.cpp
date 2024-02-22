@@ -1,6 +1,6 @@
 #include "dk_decision_control.hpp"
+#include <optional>
 #include "common_type.hpp"
-
 using namespace Common::units;
 using namespace dk::decision;
 
@@ -9,7 +9,11 @@ const Common::units::Celsius TempControl::default_min_temp_threshold_{20.0_C};
 const Common::units::Celsius TempControl::default_max_temp_threshold_{30.0_C};
 const bool TempControl::default_close_{false};
 
-std::shared_ptr<TempControl> TempControl::Create() { return std::shared_ptr<TempControl>(new TempControl()); }
+std::shared_ptr<TempControl> TempControl::Create(std::optional<Common::units::Celsius> temp_min_threshold,
+                                                 std::optional<Common::units::Celsius> temp_max_threshold)
+{
+  return std::shared_ptr<TempControl>(new TempControl(temp_min_threshold, temp_max_threshold));
+}
 
 void TempControl::Update(const Common::units::Celsius& intake_temp)
 {
@@ -17,6 +21,10 @@ void TempControl::Update(const Common::units::Celsius& intake_temp)
 
   temp_control_state_->Update(shared_from_this(), intake_temp, temp_min_threshold_, temp_max_threshold_);
 }
+TempControl::TempControl(std::optional<Common::units::Celsius> temp_min_threshold, std::optional<Common::units::Celsius> temp_max_threshold)
+
+  : temp_min_threshold_(temp_min_threshold.value_or(default_min_temp_threshold_)),
+    temp_max_threshold_(temp_max_threshold.value_or(default_max_temp_threshold_)){};
 
 Common::control::ControlType TempControl::GetOutput()
 {

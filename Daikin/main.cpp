@@ -2,16 +2,21 @@
 #include <future>
 #include <iostream>
 #include <memory>
+#include <optional>
 #include <thread>
 #include "dk_decision_control/include/dk_decision_control.hpp"
+
 using namespace Common::units;
 using namespace dk::decision;
+
+constexpr auto MAX_THRESHOLD_TEMP = Celsius{30.0};
+constexpr auto MIN_THRESHOLD_TEMP = Celsius{20.0};
 
 int main(int argc, char* argv[])
 {
   try
   {
-    auto temp_control = TempControl::Create();
+    auto temp_control = TempControl::Create(MIN_THRESHOLD_TEMP, MAX_THRESHOLD_TEMP);
 
     temp_control->Update(25.0_C);
 

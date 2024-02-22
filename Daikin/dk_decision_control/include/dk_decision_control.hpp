@@ -4,6 +4,7 @@
 #include <chrono>
 #include <memory>
 #include <mutex>
+#include <optional>
 #include <system_error>
 #include <thread>
 #include "dk_decision_control_state.hpp"
@@ -14,8 +15,10 @@ namespace dk::decision
   class TempControl : public ITempControl, public std::enable_shared_from_this<TempControl>
   {
    public:
-    static std::shared_ptr<TempControl> Create();
-
+    static std::shared_ptr<TempControl> Create(std::optional<Common::units::Celsius> temp_min_threshold,
+                                               std::optional<Common::units::Celsius> temp_max_threshold);
+    // : temp_min_threshold_(temp_min_threshold.value_or(default_min_temp_threshold_)),
+    // temp_max_threshold_(temp_max_threshold.value_or(default_max_temp_threshold_))
     ~TempControl() override = default;
 
     TempControl(const TempControl&) = delete;
@@ -35,7 +38,7 @@ namespace dk::decision
     // std::shared_ptr<ITempControlState> temp_control_state_{InactiveTempControlState::GetInstance()};
 
    private:
-    explicit TempControl() = default;
+    TempControl(std::optional<Common::units::Celsius> temp_min_threshold, std::optional<Common::units::Celsius> temp_max_threshold);
 
     std::shared_ptr<ITempControlState> temp_control_state_{InactiveTempControlState::GetInstance()};
 
