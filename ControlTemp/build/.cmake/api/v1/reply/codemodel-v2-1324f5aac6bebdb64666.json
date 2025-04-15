@@ -1,0 +1,144 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "dk_decision_control",
+					"childIndexes" : 
+					[
+						2
+					],
+					"jsonFile" : "directory-dk_decision_control-Debug-7c2b807219d9fd5279e5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "dk_decision_control",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "dk_decision_control/tests",
+					"jsonFile" : "directory-dk_decision_control.tests-Debug-e4cc628d87c8d8d72579.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "dk_decision_control/tests",
+					"targetIndexes" : 
+					[
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Daikin-Control",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "Decision",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "decision",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Daikin-Control::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Daikin-Control-Debug-4d7875cc8e39b209758e.json",
+					"name" : "Daikin-Control",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "Decision::@8d642308bd87478651f5",
+					"jsonFile" : "target-Decision-Debug-c0cc9413bf395d979243.json",
+					"name" : "Decision",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "decision_test::@8a6734d2ce714346ad78",
+					"jsonFile" : "target-decision_test-Debug-a6e95b76ecb8e8d54662.json",
+					"name" : "decision_test",
+					"projectIndex" : 2
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/tahenti/DEMO/Temp-decision-control/Daikin/build",
+		"source" : "/home/tahenti/DEMO/Temp-decision-control/Daikin"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

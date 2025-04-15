@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/home/tahenti/DEMO/Temp-decision-control/Daikin/build",
+  "command": "/usr/bin/clang++  -I/home/tahenti/DEMO/Temp-decision-control/Daikin -I/home/tahenti/DEMO/Temp-decision-control/Daikin/common/include -g -std=gnu++20 -o CMakeFiles/Daikin-Control.dir/main.cpp.o -c /home/tahenti/DEMO/Temp-decision-control/Daikin/main.cpp",
+  "file": "/home/tahenti/DEMO/Temp-decision-control/Daikin/main.cpp",
+  "output": "CMakeFiles/Daikin-Control.dir/main.cpp.o"
+},
+{
+  "directory": "/home/tahenti/DEMO/Temp-decision-control/Daikin/build/dk_decision_control",
+  "command": "/usr/bin/clang++  -I/home/tahenti/DEMO/Temp-decision-control/Daikin/dk_decision_control/include -I/home/tahenti/DEMO/Temp-decision-control/Daikin/dk_decision_control/mocks -I/home/tahenti/DEMO/Temp-decision-control/Daikin/dk_decision_control/../common/include -g -std=gnu++20 -o CMakeFiles/Decision.dir/src/dk_decision_control.cpp.o -c /home/tahenti/DEMO/Temp-decision-control/Daikin/dk_decision_control/src/dk_decision_control.cpp",
+  "file": "/home/tahenti/DEMO/Temp-decision-control/Daikin/dk_decision_control/src/dk_decision_control.cpp",
+  "output": "dk_decision_control/CMakeFiles/Decision.dir/src/dk_decision_control.cpp.o"
+},
+{
+  "directory": "/home/tahenti/DEMO/Temp-decision-control/Daikin/build/dk_decision_control/tests",
+  "command": "/usr/bin/clang++  -I/home/tahenti/DEMO/Temp-decision-control/Daikin/dk_decision_control/tests/../include -I/home/tahenti/DEMO/Temp-decision-control/Daikin/dk_decision_control/tests/../mocks -I/home/tahenti/DEMO/Temp-decision-control/Daikin/dk_decision_control/tests/../../common/include  -g -O0 -coverage -fprofile-arcs -ftest-coverage -g -std=gnu++20 -o CMakeFiles/decision_test.dir/__/src/dk_decision_control.cpp.o -c /home/tahenti/DEMO/Temp-decision-control/Daikin/dk_decision_control/src/dk_decision_control.cpp",
+  "file": "/home/tahenti/DEMO/Temp-decision-control/Daikin/dk_decision_control/src/dk_decision_control.cpp",
+  "output": "dk_decision_control/tests/CMakeFiles/decision_test.dir/__/src/dk_decision_control.cpp.o"
+},
+{
+  "directory": "/home/tahenti/DEMO/Temp-decision-control/Daikin/build/dk_decision_control/tests",
+  "command": "/usr/bin/clang++  -I/home/tahenti/DEMO/Temp-decision-control/Daikin/dk_decision_control/tests/../include -I/home/tahenti/DEMO/Temp-decision-control/Daikin/dk_decision_control/tests/../mocks -I/home/tahenti/DEMO/Temp-decision-control/Daikin/dk_decision_control/tests/../../common/include  -g -O0 -coverage -fprofile-arcs -ftest-coverage -g -std=gnu++20 -o CMakeFiles/decision_test.dir/tests_dk_decision_control.cpp.o -c /home/tahenti/DEMO/Temp-decision-control/Daikin/dk_decision_control/tests/tests_dk_decision_control.cpp",
+  "file": "/home/tahenti/DEMO/Temp-decision-control/Daikin/dk_decision_control/tests/tests_dk_decision_control.cpp",
+  "output": "dk_decision_control/tests/CMakeFiles/decision_test.dir/tests_dk_decision_control.cpp.o"
+}
+]

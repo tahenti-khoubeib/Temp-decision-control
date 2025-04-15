@@ -1,0 +1,1 @@
+/usr/bin/clang++ -g -Xlinker --dependency-file=CMakeFiles/Daikin-Control.dir/link.d "CMakeFiles/Daikin-Control.dir/main.cpp.o" -o Daikin-Control  dk_decision_control/libDecision.a
