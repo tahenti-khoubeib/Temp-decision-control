@@ -3,7 +3,7 @@ message("C++ Compiler ID: ${CMAKE_CXX_COMPILER_ID}")
 message("C++ Compiler Version: ${CMAKE_CXX_COMPILER_VERSION}")
 message("C++ Standard: ${CMAKE_CXX_STANDARD}")
 
-set(PROJECT_NAME "Daikin-Control")
+set(PROJECT_NAME "ControlTemp")
 set(CMAKE_CXX_STANDARD 20)
 
 project(${PROJECT_NAME})

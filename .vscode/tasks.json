@@ -2,7 +2,7 @@
 	"version": "2.0.0",
 	"options": {
 		"env": {
-			"PROJECT_PATH": "${workspaceFolder}/Daikin/dk_decision_control",
+			"PROJECT_PATH": "${workspaceFolder}/ControlTemp/dk_decision_control",
 			"BUILD_PATH": "${workspaceRoot}/build",
 		},
 	},

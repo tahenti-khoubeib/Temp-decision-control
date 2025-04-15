@@ -1,7 +1,7 @@
 {
 	"folders": [
 		{
-			"path": "Daikin"
+			"path": "ControlTemp"
 		}
 	],
 	"settings": {
@@ -16,7 +16,7 @@
 		"python.analysis.extraPaths": [
 			"${workspaceFolder}"
 		],
-		"azdoPullRequests.projectName": "Daikin",
+		"azdoPullRequests.projectName": "ControlTemp",
 		"[cpp]": {
 			"editor.defaultFormatter": "xaver.clang-format"
 		},
@@ -87,7 +87,10 @@
 			"typeinfo": "cpp",
 			"set": "cpp",
 			"optional": "cpp",
-			"variant": "cpp"
+			"variant": "cpp",
+			"charconv": "cpp",
+			"span": "cpp",
+			"format": "cpp"
 		},
 	},
 	"extensions": {

@@ -1,2 +1,0 @@
-/usr/bin/ar qc libDecision.a CMakeFiles/Decision.dir/src/dk_decision_control.cpp.o
-/usr/bin/ranlib libDecision.a

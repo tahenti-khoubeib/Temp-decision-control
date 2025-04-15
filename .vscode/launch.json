@@ -5,7 +5,7 @@
       "name": "Debug",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/Daikin-Control",
+      "program": "${workspaceFolder}/build/ControlTemp",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
